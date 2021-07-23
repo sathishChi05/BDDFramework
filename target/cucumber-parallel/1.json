@@ -1,0 +1,306 @@
+[
+  {
+    "line": 20,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 351467200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GenericSteps.Before(Scenario)"
+            }
+          }
+        ],
+        "line": 40,
+        "name": "My Store - Login",
+        "description": "",
+        "id": "as-a-user--i-want-to-verify-mystore-website-login;my-store---login;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2009637400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GenericSteps.After(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4956130100,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User opens Chrome",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Chrome",
+                  "offset": 11
+                }
+              ],
+              "location": "GenericSteps.openBrowser(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2950044700,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User navigates to URL1 with MyStoreHomePageTitle_Text",
+            "match": {
+              "arguments": [
+                {
+                  "val": "URL1",
+                  "offset": 18
+                },
+                {
+                  "val": "MyStoreHomePageTitle_Text",
+                  "offset": 28
+                }
+              ],
+              "location": "GenericSteps.navigate(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2700984400,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User clicks MyStoreSignIn_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreSignIn_xpath",
+                  "offset": 12
+                }
+              ],
+              "location": "GenericSteps.clickButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2308870300,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "User should see MyStoreCreateAccountText_xpath from examples Create an account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreCreateAccountText_xpath",
+                  "offset": 16
+                },
+                {
+                  "val": "Create an account",
+                  "offset": 61
+                }
+              ],
+              "location": "GenericSteps.verifyTextfromExamples(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 332541700,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User enters from dataSheet UserName in MyStoreLoginEmail_xpath Textfield",
+            "match": {
+              "arguments": [
+                {
+                  "val": "UserName",
+                  "offset": 27
+                },
+                {
+                  "val": "MyStoreLoginEmail_xpath",
+                  "offset": 39
+                }
+              ],
+              "location": "GenericSteps.enterTextFromDataSheet(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 280585600,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "User enters from dataSheet Password in MyStoreLoginPwd_xpath Textfield",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Password",
+                  "offset": 27
+                },
+                {
+                  "val": "MyStoreLoginPwd_xpath",
+                  "offset": 39
+                }
+              ],
+              "location": "GenericSteps.enterTextFromDataSheet(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2133255200,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "User clicks MyStoreAccSubmitButton_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreAccSubmitButton_xpath",
+                  "offset": 12
+                }
+              ],
+              "location": "GenericSteps.clickButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2327346200,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User should see MyStoreAccLoginPageText_xpath from examples Welcome to your account.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreAccLoginPageText_xpath",
+                  "offset": 16
+                },
+                {
+                  "val": "Welcome to your account.",
+                  "offset": 60
+                }
+              ],
+              "location": "GenericSteps.verifyTextfromExamples(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 263913800,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User enters from examples Blouse in MyStoreSearchField_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Blouse",
+                  "offset": 26
+                },
+                {
+                  "val": "MyStoreSearchField_xpath",
+                  "offset": 36
+                }
+              ],
+              "location": "GenericSteps.enterTextFromExamples(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2100219400,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User clicks MyStoreSeachButton_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreSeachButton_xpath",
+                  "offset": 12
+                }
+              ],
+              "location": "GenericSteps.clickButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 205761300,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User should check Blouse in table MyStoreSearchResult_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Blouse",
+                  "offset": 18
+                },
+                {
+                  "val": "MyStoreSearchResult_xpath",
+                  "offset": 34
+                }
+              ],
+              "location": "GenericSteps.verifyFromTable(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 249634200,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User scrollMouseTo MyStoreSearchResult_xpath",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MyStoreSearchResult_xpath",
+                  "offset": 19
+                }
+              ],
+              "location": "GenericSteps.scrollMouseTo(String)"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@MyStoreProductSearch"
+          },
+          {
+            "name": "@MyStoreProductSearch"
+          }
+        ]
+      }
+    ],
+    "name": "As a user, I want to verify MyStore Website Login",
+    "description": "",
+    "id": "as-a-user--i-want-to-verify-mystore-website-login",
+    "keyword": "Feature",
+    "uri": "C:/Automation/BDDFramework/src/test/resources/com/Practice/Features/InProgress/MyStoreProductSearch.feature",
+    "tags": [
+      {
+        "name": "@MyStoreProductSearch",
+        "type": "Tag",
+        "location": {
+          "line": 19,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
