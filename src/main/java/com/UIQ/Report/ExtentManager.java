@@ -4,18 +4,19 @@ import java.io.File;
 import java.util.Date;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Protocol;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.reporter.configuration.ViewName;
+
+
 
 public class ExtentManager {
     
     private static ExtentReports extent;
     public static String screenshotFolderPath;
-	public static String reportFolderName;
-	public static String sourceFolderFileName;
-	public static String destFolderFileName;
-	public static String destFolder;
+	public static String reportFolderName = null;
+	
 	
     public static ExtentReports getInstance() {
     	
@@ -26,41 +27,70 @@ public class ExtentManager {
     		// generate report folder
     		String fileName="Report.html";
     		Date d = new Date();
-    		reportFolderName=d.toString().replace(":", "_");
+    		String FolderName=d.toString().replace(":", "_");
     		
     		// directory of the report folder
-    		new File(reportPath+reportFolderName+"//screenshots").mkdirs();
+    		new File(reportPath+FolderName+"//screenshots").mkdirs();
     		
-    		String createdReportPath=reportPath+reportFolderName+"//";
+    		reportPath = reportPath+FolderName+"\\";
+    		reportFolderName = reportPath+fileName;
+    		screenshotFolderPath = reportPath +"screenshots//";
     		
-    		//destFolderFileName = reportPath+reportFolderName+"\\"+fileName;
+    		//System.out.println(screenshotFolderPath);
+    		createInstance(reportPath+fileName);
     		
-    		screenshotFolderPath=createdReportPath+"screenshots//";
-    		
-    		//source and destination file path to copy latest Report.html 
-    		
-    		sourceFolderFileName = createdReportPath+fileName;  	
-    		
-    		destFolder = reportPath+fileName;    
-    		
-    		System.out.println(sourceFolderFileName);
-    		createInstance(sourceFolderFileName);
-    	}
+    		}
     	
         return extent;
     }
     
     public static ExtentReports createInstance(String fileName) {
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
-        htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
-        htmlReporter.config().setChartVisibilityOnOpen(true);
-        htmlReporter.config().setTheme(Theme.STANDARD);
-        htmlReporter.config().setDocumentTitle("Reports");
-        htmlReporter.config().setEncoding("utf-8");
-        htmlReporter.config().setReportName("Reports - Automation Testing");
-        
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
+    	
+    	extent = new ExtentReports();
+    	
+    	ExtentSparkReporter spark = new ExtentSparkReporter(fileName)
+    			  .viewConfigurer()
+    			    .viewOrder()
+    			    .as (new ViewName[] {
+    			      ViewName.DASHBOARD,
+    			      ViewName.TEST,
+    			      ViewName.AUTHOR,
+    			      ViewName.DEVICE,
+    			      ViewName.EXCEPTION,
+    			      ViewName.LOG
+    			    })
+    			    .apply();
+    			    
+    			    
+    			    
+    			    /*
+    			    
+    			    .as(new ViewName[] { 
+    				   ViewName.DASHBOARD, 
+    				   ViewName.TEST, 
+    				   ViewName.TAG, 
+    				   ViewName.AUTHOR, 
+    				   ViewName.DEVICE, 
+    				   ViewName.EXCEPTION, 
+    				   ViewName.LOG 
+    				})
+    			  .apply();*/
+    	
+    	
+    	extent.setSystemInfo("os", "Windows - 10");
+    	spark.config().setTheme(Theme.DARK);;
+    	spark.config().setDocumentTitle("Automation Practice");
+    	spark.config().setReportName("BDD Framework Report");
+    	spark.config().setEncoding("utf-8");
+    	spark.config().setTimeStampFormat("MM.dd.yyyy, HH:mm:ss");
+    	spark.config().setCss("css-string");
+    	spark.config().setJs("js-string");
+    	spark.config().setProtocol(Protocol.HTTPS);
+    	
+    	
+    	
+    	
+        extent.attachReporter(spark);
         
         return extent;
     }
