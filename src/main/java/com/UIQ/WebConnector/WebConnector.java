@@ -1825,13 +1825,14 @@ public void writingInJsonFile(String dataFile ) throws IOException {
      * sceanrioName is the name of the BDD Test case to be displayed in the report */    
         public void copyReport() {
        		try {
-       	   String  destFolder = ExtentManager.destFolder;
-       	   String sourceFolderFileName = ExtentManager.sourceFolderFileName ;
+       	   String  sourceFolder = ExtentManager.reportFolderName;
+       	   String destFolder = System.getProperty("user.dir")+"\\reports\\Report.html";
+       	  
        	   
         	//System.out.println(destFolder);
-        	//System.out.println(sourceFolderFileName);
+        	//System.out.println(sourceFolder);
        	   // Files.copy(Paths.get(ExtentManager.reportFolderName), Paths.get(System.getProperty("user.dir")+"//reports//Report.html"),StandardCopyOption.REPLACE_EXISTING );
-        	Files.copy(Paths.get(sourceFolderFileName), Paths.get(destFolder),StandardCopyOption.REPLACE_EXISTING );
+        	Files.copy(Paths.get(sourceFolder), Paths.get(destFolder),StandardCopyOption.REPLACE_EXISTING );
        	   //Files.copy(source, target, options)
        	 //System.out.println("after message");
        		}
@@ -1873,6 +1874,8 @@ public void writingInJsonFile(String dataFile ) throws IOException {
 		// fileName of the screenshot
 		Date d=new Date();
 		String screenshotFile=d.toString().replace(":", "_").replace(" ", "_")+".png";
+		
+		//System.out.println(screenshotFile);
 		// take screenshot
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
